@@ -32,15 +32,14 @@ Vibes Connect** tracks the parametric CAD in the Strong Vibes Prints repository.
 
 ## Reference implementations
 
-Fork-and-run projects that implement the standards. Each is Apache-2.0 (code) or
-CC-BY-4.0 (designs), with its own attribution and quickstart. *(Rolling out
-alongside this standard.)*
+Fork-and-run projects that implement the standards — **all public now**. Each is
+Apache-2.0 (code) or CC-BY-4.0 (designs), with its own attribution and quickstart.
 
 | Project | What it is | Repository |
 |---|---|---|
-| **Strong Vibes Playapp** | browser-based controller (Vite/React/TS) — a `Use this template` starting point | `amok-products/strong-vibes-playapp` |
-| **Strong Vibes Knob Control** | ESP32-S3 / ESP-IDF knob firmware (tactile controller + BLE) | `amok-products/strong-vibes-knob-control` |
-| **Strong Vibes Prints** | build123d CAD: printable holders/stands + the Strong Vibes Connect reference parts | `amok-products/strong-vibes-prints` |
+| **Strong Vibes Playapp** | browser-based controller (Vite/React/TS) — a `Use this template` starting point, live at [playapp.emw4u.com](https://playapp.emw4u.com) | [`amok-products/strong-vibes-playapp`](https://github.com/amok-products/strong-vibes-playapp) |
+| **Strong Vibes Knob Control** | ESP32-S3 / ESP-IDF knob firmware (tactile controller + BLE) | [`amok-products/strong-vibes-knob-control`](https://github.com/amok-products/strong-vibes-knob-control) |
+| **Strong Vibes Prints** | build123d CAD: a printable holder + the Strong Vibes Connect reference parts, with an [interactive 3D viewer](https://amok-products.github.io/strong-vibes-prints/) | [`amok-products/strong-vibes-prints`](https://github.com/amok-products/strong-vibes-prints) |
 
 ## Licensing & accreditation
 
