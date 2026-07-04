@@ -12,47 +12,70 @@
 <meta property="og:description" content="Open standards + reference code from Europe Magic Wand. Fork, run, extend. One prompt to your AI and you're building.">
 <meta property="og:url" content="https://europemagicwand.com/vibe-builder">
 <meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* Palette mirrors the Strong Vibes Playapp design system:
+     warm taupe "surface" scale + brass/gold "accent" scale, Inter + JetBrains Mono. */
   :root{
-    --bg:#0b0b10; --panel:#14141d; --panel2:#1b1b28; --ink:#ececf1;
-    --muted:#a2a2b4; --accent:#ff3b6b; --accent2:#8a5bff; --line:#2a2a3a;
+    --s950:#131210; --s900:#1E1B17; --s800:#2A2824; --s700:#4A4234;
+    --s500:#8A7F72; --s400:#B8AC9A; --s200:#EBE5DB; --s100:#F5F1EB;
+    --a700:#7E6022; --a600:#A47E2C; --a500:#C49A3A; --a400:#D4AA52; --a300:#DFC47A;
+    --green:#4ade80;
+    --bg:var(--s950); --ink:var(--s100); --muted:var(--s400); --line:var(--s700);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  a{color:#ff7a9c;text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
-  .adult{background:#000;color:var(--muted);font-size:13px;text-align:center;
-    padding:8px 12px;border-bottom:1px solid var(--line)}
-  header.hero{padding:72px 0 40px;
-    background:radial-gradient(1200px 400px at 50% -50%,rgba(138,91,255,.25),transparent),
-               radial-gradient(900px 380px at 80% 0,rgba(255,59,107,.18),transparent)}
-  .kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.6;
+    font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  a{color:var(--a400);text-decoration:none}
+  a:hover{color:var(--a300);text-decoration:underline}
+  code{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;
+    color:var(--a300)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  .adult{background:var(--s900);color:var(--muted);font-size:13px;text-align:center;
+    padding:9px 12px;border-bottom:1px solid var(--line);letter-spacing:.01em}
+  header.hero{padding:78px 0 46px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(1100px 380px at 50% -40%,rgba(196,154,58,.20),transparent 70%),
+      radial-gradient(760px 360px at 82% -10%,rgba(74,66,52,.55),transparent 70%),
+      linear-gradient(180deg,var(--s900),var(--s950) 70%)}
+  .kicker{letter-spacing:.2em;text-transform:uppercase;color:var(--a400);
     font-size:12px;font-weight:700}
-  h1{font-size:44px;line-height:1.1;margin:12px 0 10px}
-  .lead{font-size:19px;color:var(--muted);max-width:640px}
-  .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600}
-  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
-  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
-  section{padding:34px 0;border-top:1px solid var(--line)}
-  h2{font-size:26px;margin:0 0 6px}
-  .sub{color:var(--muted);margin:0 0 20px}
+  h1{font-size:46px;line-height:1.08;margin:14px 0 12px;font-weight:700;letter-spacing:-.02em}
+  h1 .g{background:linear-gradient(120deg,var(--a300),var(--a500));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lead{font-size:19px;color:var(--muted);max-width:660px}
+  .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;
+    font-size:15px;transition:all .15s ease}
+  .btn.primary{background:var(--a500);color:#fff;border:1px solid var(--a500)}
+  .btn.primary:hover{background:var(--a600);border-color:var(--a600);text-decoration:none}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent}
+  .btn.ghost:hover{background:var(--s800);border-color:var(--s500);text-decoration:none}
+  section{padding:38px 0;border-top:1px solid var(--line)}
+  h2{font-size:27px;margin:0 0 6px;font-weight:600;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 22px}
   .grid{display:grid;gap:16px;grid-template-columns:1fr 1fr}
-  @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .card h3{margin:0 0 6px;font-size:19px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:35px}}
+  .card{background:var(--s800);border:1px solid var(--line);border-radius:12px;padding:22px;
+    transition:border-color .15s ease}
+  .card:hover{border-color:var(--a700)}
+  .card h3{margin:0 0 6px;font-size:19px;font-weight:600}
   .card p{margin:0 0 10px;color:var(--muted)}
-  .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);
-    border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:middle}
-  pre{background:#07070c;border:1px solid var(--line);border-radius:12px;padding:16px;
-    overflow:auto;color:#cdd0e0;font-size:13.5px;
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .prompt{background:var(--panel2)}
-  footer{padding:30px 0 60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-  .soon{font-size:12px;color:var(--accent2)}
+  .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--a300);
+    border:1px solid var(--a700);border-radius:999px;padding:2px 10px;margin-left:8px;
+    vertical-align:middle;letter-spacing:.04em}
+  pre{background:var(--s950);border:1px solid var(--line);border-radius:12px;padding:18px;
+    overflow:auto;color:var(--green);font-size:13.5px;line-height:1.55;
+    font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+  .prompt-label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;
+    text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--a500);display:inline-block}
+  footer{padding:32px 0 64px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .soon{font-size:12px;color:var(--a400);font-weight:600}
+  .mark{color:var(--s500)}
 </style>
 </head>
 <body>
@@ -61,7 +84,7 @@
 <header class="hero">
   <div class="wrap">
     <div class="kicker">Strong Vibes by europemagicwand.com</div>
-    <h1>Build your own Bluetooth<br>massager apps &amp; mounts.</h1>
+    <h1>Build your own Bluetooth<br><span class="g">massager apps &amp; mounts.</span></h1>
     <p class="lead">Open standards and fork-and-run reference code from Europe Magic Wand®.
       Two open standards, real implementations you can template, and a builder kit that
       turns one prompt to your AI into a working app.</p>
@@ -98,7 +121,8 @@
   <div class="wrap">
     <h2>Start with your AI</h2>
     <p class="sub">Paste this into Cursor or any AI coding assistant. It reads the spec and scaffolds your app.</p>
-    <pre class="prompt">Build me a Strong Vibes client. Read the spec first:
+    <div class="prompt-label"><span class="dot"></span> paste to your AI</div>
+    <pre>Build me a Strong Vibes client. Read the spec first:
 https://raw.githubusercontent.com/amok-products/strong-vibes/main/protocol/strong-vibes-protocol.md
 
 Then make a Chrome web app (Web Bluetooth) that connects to my device,
@@ -142,7 +166,7 @@ every message starts with 0x10 and is ≤ 121 bytes. Explain the bytes.</pre>
     <p>Specs &amp; docs licensed <a href="https://github.com/amok-products/strong-vibes/blob/main/LICENSE">CC-BY-4.0</a>;
        reference code Apache-2.0. Names governed by
        <a href="https://github.com/amok-products/strong-vibes/blob/main/TRADEMARK.md">TRADEMARK.md</a>.</p>
-    <p>Strong Vibes™ · Europe Magic Wand® · <a href="https://europemagicwand.com/vibe-builder">europemagicwand.com/vibe-builder</a></p>
+    <p><span class="mark">Strong Vibes™ · Europe Magic Wand® ·</span> <a href="https://europemagicwand.com/vibe-builder">europemagicwand.com/vibe-builder</a></p>
   </div>
 </footer>
 </body>
