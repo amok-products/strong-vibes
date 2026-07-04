@@ -44,7 +44,7 @@ Start by summarizing the spec back to me in a few lines, then scaffold the app.
 ## Notes
 
 - The **reference implementation** is [Strong Vibes Playapp](../README.md#reference-implementations)
-  — a full Vite/React Web Bluetooth app you can fork as a `Use this template`
+  — a full Vite/React web app you can fork as a `Use this template`
   starting point instead of building from zero. See
   [`quickstart.md`](quickstart.md).
 - Anything you build is yours under the spec's CC-BY-4.0 license. If you use the

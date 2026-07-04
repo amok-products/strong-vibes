@@ -4,7 +4,7 @@ Two ways to build a Strong Vibes client — pick one.
 
 ## A. Start from the reference app (fastest)
 
-**Strong Vibes Playapp** is a complete Web Bluetooth controller (Vite + React +
+**Strong Vibes Playapp** is a complete browser controller (Vite + React +
 TypeScript). It's published as a GitHub **template repo**, so:
 
 1. Open the Strong Vibes Playapp repository and click **Use this template →
