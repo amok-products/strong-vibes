@@ -8,7 +8,7 @@
 - **Hobbyist hardware — build and use at your own risk.** The Strong Vibes
   standards and reference implementations describe and produce open-source
   software, firmware, and mechanical designs that can drive a motor over
-  Bluetooth Low Energy, including on do-it-yourself or hobbyist hardware. You are
+  BLE, including on do-it-yourself or hobbyist hardware. You are
   responsible for the hardware you build, connect, and operate, and for using it
   safely and legally.
 

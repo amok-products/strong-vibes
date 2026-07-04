@@ -1,7 +1,7 @@
 # Strong Vibes
 
-**Open standards and reference code for building your own Bluetooth massager
-apps, firmware, and mounts** — by [europemagicwand.com](https://europemagicwand.com).
+**Open standards and reference code for building your own massager apps,
+firmware, and mounts** — by [europemagicwand.com](https://europemagicwand.com).
 
 Strong Vibes is a maker/builder program from Europe Magic Wand®. It opens up the
 pieces you need to build a Strong Vibes–compatible device or controller: two open
@@ -38,7 +38,7 @@ alongside this standard.)*
 
 | Project | What it is | Repository |
 |---|---|---|
-| **Strong Vibes Playapp** | browser Web Bluetooth controller (Vite/React/TS) — a `Use this template` starting point | `amok-products/strong-vibes-playapp` |
+| **Strong Vibes Playapp** | browser-based controller (Vite/React/TS) — a `Use this template` starting point | `amok-products/strong-vibes-playapp` |
 | **Strong Vibes Knob Control** | ESP32-S3 / ESP-IDF knob firmware (tactile controller + BLE) | `amok-products/strong-vibes-knob-control` |
 | **Strong Vibes Prints** | build123d CAD: printable holders/stands + the Strong Vibes Connect reference parts | `amok-products/strong-vibes-prints` |
 
@@ -63,4 +63,4 @@ names are unregistered ™. Full terms: [`TRADEMARK.md`](TRADEMARK.md).
 
 ---
 
-Strong Vibes™ · Europe Magic Wand® · [europemagicwand.com/vibe-builder](https://europemagicwand.com/vibe-builder)
+Strong Vibes™ · Europe Magic Wand® · [europemagicwand.com/strong-vibes-builder](https://europemagicwand.com/strong-vibes-builder)
