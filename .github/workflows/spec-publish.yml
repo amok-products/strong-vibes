@@ -1,0 +1,47 @@
+name: spec-integrity
+
+# Guards the canonical Strong Vibes Protocol against silent edits and powers the
+# consumer-repo diff-gate: it re-verifies the committed checksum and publishes
+# the canonical SHA-256 + raw URL that reference implementations diff against.
+
+on:
+  push:
+    paths:
+      - 'protocol/strong-vibes-protocol.md'
+      - 'protocol/strong-vibes-protocol.md.sha256'
+      - '.github/workflows/spec-publish.yml'
+  pull_request:
+    paths:
+      - 'protocol/strong-vibes-protocol.md'
+      - 'protocol/strong-vibes-protocol.md.sha256'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify canonical spec checksum
+        working-directory: protocol
+        run: |
+          echo "Verifying protocol/strong-vibes-protocol.md against the committed checksum…"
+          if ! shasum -a 256 -c strong-vibes-protocol.md.sha256; then
+            echo "::error::Canonical spec changed without updating its checksum."
+            echo "Run:  shasum -a 256 protocol/strong-vibes-protocol.md > protocol/strong-vibes-protocol.md.sha256"
+            exit 1
+          fi
+          echo "OK — canonical Strong Vibes Protocol checksum matches."
+
+      - name: Publish canonical checksum + raw URL
+        run: |
+          SUM=$(cut -d' ' -f1 protocol/strong-vibes-protocol.md.sha256)
+          {
+            echo "### Strong Vibes Protocol — canonical"
+            echo ""
+            echo "- **SHA-256:** \`$SUM\`"
+            echo "- **Raw URL:** https://raw.githubusercontent.com/amok-products/strong-vibes/main/protocol/strong-vibes-protocol.md"
+            echo ""
+            echo "Reference implementations should diff their in-repo mirror against this file / checksum."
+          } >> "$GITHUB_STEP_SUMMARY"

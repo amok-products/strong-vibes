@@ -1,0 +1,19 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+.idea/
+.vscode/
+
+# Scratch / local-only
+_*.md
+_*.py
+*.local.*
+.env
+.env.*
+
+# Never publish internal / hub-coupled files (guarded by CI too)
+MESSAGES_TO_HUB.md
+CLAUDE.md
+CODEBASE_NOTES.md
+.bolt/

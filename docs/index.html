@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strong Vibes — build your own Bluetooth massager apps &amp; mounts</title>
+<meta name="description" content="Open standards and reference code from Europe Magic Wand for building your own Bluetooth Low Energy massager apps, firmware, and mounts. The Strong Vibes Protocol, Strong Vibes Connect, and a fork-and-run builder kit.">
+<meta name="rating" content="adult">
+<link rel="canonical" href="https://europemagicwand.com/vibe-builder">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Strong Vibes — build your own Bluetooth massager apps &amp; mounts">
+<meta property="og:description" content="Open standards + reference code from Europe Magic Wand. Fork, run, extend. One prompt to your AI and you're building.">
+<meta property="og:url" content="https://europemagicwand.com/vibe-builder">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --bg:#0b0b10; --panel:#14141d; --panel2:#1b1b28; --ink:#ececf1;
+    --muted:#a2a2b4; --accent:#ff3b6b; --accent2:#8a5bff; --line:#2a2a3a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:#ff7a9c;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
+  .adult{background:#000;color:var(--muted);font-size:13px;text-align:center;
+    padding:8px 12px;border-bottom:1px solid var(--line)}
+  header.hero{padding:72px 0 40px;
+    background:radial-gradient(1200px 400px at 50% -50%,rgba(138,91,255,.25),transparent),
+               radial-gradient(900px 380px at 80% 0,rgba(255,59,107,.18),transparent)}
+  .kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    font-size:12px;font-weight:700}
+  h1{font-size:44px;line-height:1.1;margin:12px 0 10px}
+  .lead{font-size:19px;color:var(--muted);max-width:640px}
+  .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:19px}
+  .card p{margin:0 0 10px;color:var(--muted)}
+  .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);
+    border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:middle}
+  pre{background:#07070c;border:1px solid var(--line);border-radius:12px;padding:16px;
+    overflow:auto;color:#cdd0e0;font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .prompt{background:var(--panel2)}
+  footer{padding:30px 0 60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .soon{font-size:12px;color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="adult">Adults only (18+). Hobbyist hardware — build and use at your own risk. Not a medical device.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Strong Vibes by europemagicwand.com</div>
+    <h1>Build your own Bluetooth<br>massager apps &amp; mounts.</h1>
+    <p class="lead">Open standards and fork-and-run reference code from Europe Magic Wand®.
+      Two open standards, real implementations you can template, and a builder kit that
+      turns one prompt to your AI into a working app.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/amok-products/strong-vibes/blob/main/builder-kit/quickstart.md">Get building →</a>
+      <a class="btn ghost" href="https://github.com/amok-products/strong-vibes">View on GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Two open standards</h2>
+    <p class="sub">Free to implement, including commercially — the one condition is accreditation.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Strong Vibes Protocol <span class="tag">v1.0.0</span></h3>
+        <p>The open BLE wire protocol: a client drives motor/vibration patterns
+          (linear, sine, gaussian) over two GATT characteristics. Compact, datagram-based,
+          self-contained enough to implement in one pass.</p>
+        <a href="https://github.com/amok-products/strong-vibes/blob/main/protocol/strong-vibes-protocol.md">Read the spec →</a>
+      </div>
+      <div class="card">
+        <h3>Strong Vibes Connect <span class="tag">v1.0.0</span></h3>
+        <p>The mechanical mount standard: a keyed diamond boss + socket clamped with a
+          standard <code>1/4"-20</code> screw — rigid, single-orientation, printable.</p>
+        <a href="https://github.com/amok-products/strong-vibes/blob/main/connect/strong-vibes-connect.md">Read the standard →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Start with your AI</h2>
+    <p class="sub">Paste this into Cursor or any AI coding assistant. It reads the spec and scaffolds your app.</p>
+    <pre class="prompt">Build me a Strong Vibes client. Read the spec first:
+https://raw.githubusercontent.com/amok-products/strong-vibes/main/protocol/strong-vibes-protocol.md
+
+Then make a Chrome web app (Web Bluetooth) that connects to my device,
+with a start/stop button, an intensity slider (0–100), and three presets.
+Service 00001221-1313-71be-1221-785dfeabc321; write 0x1225, notify 0x1227;
+every message starts with 0x10 and is ≤ 121 bytes. Explain the bytes.</pre>
+    <p>Full kit: <a href="https://github.com/amok-products/strong-vibes/blob/main/builder-kit/PROMPT.md">builder-kit/PROMPT.md</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Reference implementations</h2>
+    <p class="sub">Fork-and-run projects that implement the standards. <span class="soon">Rolling out alongside this standard.</span></p>
+    <div class="grid">
+      <div class="card">
+        <h3>Strong Vibes Playapp</h3>
+        <p>Browser Web Bluetooth controller (Vite/React/TypeScript). A
+          <em>Use this template</em> starting point.</p>
+      </div>
+      <div class="card">
+        <h3>Strong Vibes Knob Control</h3>
+        <p>ESP32-S3 / ESP-IDF knob firmware — a tactile controller and BLE endpoint.</p>
+      </div>
+      <div class="card">
+        <h3>Strong Vibes Prints</h3>
+        <p>build123d CAD: printable holders and stands, plus the Strong Vibes Connect
+          reference parts.</p>
+      </div>
+      <div class="card">
+        <h3>The umbrella</h3>
+        <p>Standards, builder kit, and community docs live in
+          <a href="https://github.com/amok-products/strong-vibes">amok-products/strong-vibes</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Specs &amp; docs licensed <a href="https://github.com/amok-products/strong-vibes/blob/main/LICENSE">CC-BY-4.0</a>;
+       reference code Apache-2.0. Names governed by
+       <a href="https://github.com/amok-products/strong-vibes/blob/main/TRADEMARK.md">TRADEMARK.md</a>.</p>
+    <p>Strong Vibes™ · Europe Magic Wand® · <a href="https://europemagicwand.com/vibe-builder">europemagicwand.com/vibe-builder</a></p>
+  </div>
+</footer>
+</body>
+</html>
